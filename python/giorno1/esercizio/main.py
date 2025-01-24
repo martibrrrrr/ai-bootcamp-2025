@@ -18,7 +18,7 @@ result= bar/baz    #definisco result
 
 # Incremento il risultato di uno
 
-result = result + 1
+result += 1
 
 # Decremento il risultato di uno
 
@@ -28,7 +28,7 @@ result -= 1
 assert result >= 0    # assert result < 0  per controllare che sia negativo
 
 # Concateno le stringhe
-message = "hello" + str(" world")  #non posso concatenare message = "hello" + b"world"
+message = "hello" + "world"  #non posso concatenare message = "hello" + b"world"
 
 # Creo una lista e la estendo
 li1 = [1, 2]
