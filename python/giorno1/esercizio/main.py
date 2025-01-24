@@ -91,4 +91,3 @@ print("Fine programma")
 # Bonus: verifico la seguente operazione sui float 0.1+0.2 == 0.3
 import math
 assert math.isclose( 0.1+0.2 ,0.3 ) # uso assert math.isclose(a,b,rel_tol,abs_tol)
-
