@@ -15,6 +15,8 @@ class Country:
         """The total population of this country"""
         for region in self.region:
             region.pop += 1
+        return region.pop
+
     """ def most_populous_city(self):
         for region in self.regions:
             for city in region.cities:

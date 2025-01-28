@@ -37,8 +37,8 @@ def count_words(s):
     #return count
     count = 0
     word = False
-    for chr in s:
-        if chr != ' ':
+    for ch in s:
+        if ch != ' ':
             if not word:
                 count += 1
                 word = True #i'm in a word
@@ -87,11 +87,11 @@ def sum_even_numbers(ls):
       Example: sum_even_numbers([1, 2, 3, 4, 5]) == 6
       Input: list of number
       Output: sum of the even number in the list  """
-    sum = 0
+    summ = 0
     for x in ls:
         if x % 2 == 0:
-            sum += x
-    return sum
+            summ += x
+    return summ
 
 def find_max(ls):
     """ This function takes a list of numbers
@@ -110,21 +110,3 @@ def count_vowels(s):
             count += 1
 
     return count
-
-"""%%%%%%%%%%%%%% esercizio di gruppo
-class Account:
-    def __init__(self,name):
-        self.name = name
-
-account = Account(name= "Martina")
-assert account.name == "Martina"
-
-class Account:
-    def __init__(self,name):
-        self.name = name
-        self.balance = 0 #attributo di istanza
-    def deposit(self, credit):
-        self.balance += credit
-        
-account = Account(name="Martina", balance = 500)
-assert account.balance == 500 """

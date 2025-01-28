@@ -5,9 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4efc28fa-1c9f-4469-bcef-fbb2cead882b" name="Changes" comment="Esercizio_1">
-      <change afterPath="$PROJECT_DIR$/python/GLOSSARIO.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/python/giorno2_3/esercizi/classi/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/python/giorno2_3/esercizi/classi/tests.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/python/giorno2_3/esercizi/funzioni/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/python/giorno2_3/esercizi/funzioni/tests.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/giorno2_3/esercizi/classi/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/python/giorno2_3/esercizi/classi/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,7 +50,7 @@
     "Python.tests.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "Merging patch-1",
+    "git-widget-placeholder": "patch-1",
     "ignore.virus.scanning.warn.message": "true",
     "last_opened_file_path": "C:/Users/marti/OneDrive - Politecnico di Torino/Desktop/CORSO IA_EDGEMONI/esercitazioni",
     "settings.editor.selected.configurable": "vcs.Git"
