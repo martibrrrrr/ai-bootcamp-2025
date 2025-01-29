@@ -1,4 +1,5 @@
 from main import (
+    mydivmod,
     pow_list,
     count_words,
     reverse_string,
@@ -8,6 +9,11 @@ from main import (
     find_max,
     count_vowels
 )
+assert mydivmod(4,2) == (2,0), (
+    "This function make a division num/den"
+    " and return a tuple with (quotient,remainder)"
+
+) #MIGLIORAMENTO DI TRY/EXCEPT
 
 assert pow_list([1, 2, 3]) == [1, 4, 9], (
     "Implement a function that takes a list "
