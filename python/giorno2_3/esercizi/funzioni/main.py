@@ -147,13 +147,13 @@ def sum_even_numbers(ls):
 def find_max(ls):
     """ This function takes a list of numbers
     and returns the largest number in the list.
-    Example: find_max([3, 1, 4, 1, 5]) == 5  """
+    Example: find_max([3, 1, 4, 1, 5]) == 5  "
     max_val = ls[0]
     for n in ls:
         if n>max_val:
             max_val=n
-    return max_val(ls)
-    #return max
+    return max_val(ls)"""
+    return max(ls)
 
 def count_vowels(s):
     """ This function takes a string and returns the count of vowels in it.

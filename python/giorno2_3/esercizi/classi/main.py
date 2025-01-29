@@ -27,6 +27,15 @@ class Country:
 
     @property
     def most_populuous_city(self):
+        #script di veronica
+        # max_pop = 0
+            # most_populuous_city = None
+            # for region in self.regions:
+            # for city in region.cities:
+                # if city.pop > max_pop
+                    # most_populuous_city = city
+                    #return most_populuous_city
+
         # Find the city with the largest population in the country
         all_cities = [city for region in self.regions for city in region.cities]
         #for all region(in self.region) looking for the each city(in region.cities)
@@ -46,10 +55,10 @@ class Region:
 
     def add(self, city):
         # Add a city to the region
-        self.cities.append(city)
+        self.cities.append(city) #qui nei metodi è meglio non dare return
         # italy.add(sicily)
 
     @property
     def pop(self):
-                return sum(city.pop for city in self.cities) # Calculate the total population of the region
+                return sum(city.pop for city in self.cities if city.pop is not None) # Calculate the total population of the region
                 # assert sicily.pop == 900_000 %proprietà
