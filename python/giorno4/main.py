@@ -1,5 +1,5 @@
 class Directory:
-    def __init__(self):# Implement qui il codice
+    def __init__(self):
         self.contacts= [] #initialize the list that save contact Items in the Directory as empty
     def __len__(self):
         return len(self.contacts) #calculation of the number of elements  present in the item self.contact
@@ -16,29 +16,29 @@ class Directory:
 
     def find(self,search_contact):
         result_c = []
-        #i add this in case i'm looking for contacts without number
         for contact in self.contacts:
+            #i add this in case i'm looking for contacts without number
             if search_contact == "":
                 #if not contact.phone:
                 if contact.phone is None or contact.phone == "":
-                    result_c.append(contact)  #Returns people with no number ""
+                    result_c.append(contact)  #Returns people with no number
 
             elif isinstance(contact, Person):
                 if search_contact in contact.name or (contact.surname and search_contact in contact.surname):
-                    result_c.append(contact)  #We return the item `Person`
+                    result_c.append(contact)  #Return the item `Person`
                 elif contact.phone and search_contact in contact.phone:
-                    result_c.append(contact)  #If we are looking for a number, we return the entire contact
+                    result_c.append(contact)  #returns the entire contact
 
             elif isinstance(contact, Business):
                 if search_contact in contact.name or (contact.phone and search_contact in contact.phone):
-                    result_c.append(contact)  #If it is a company, return the name
+                    result_c.append(contact)  #return the name of the company
         return result_c
 
 class Person:
     def __init__(self,name,surname,phone=""):
         self.name=name
         self.surname=surname
-        self.phone = phone if phone else None #register as None ( inside phone object ) if i don't have the number phone (contact)
+        self.phone = phone if phone else None #register as None (inside phone object ) if i don't have the phone number (contact)
 
 class Business:
     def __init__(self, name, phone=""):
