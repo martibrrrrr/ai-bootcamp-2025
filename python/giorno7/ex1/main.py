@@ -4,14 +4,17 @@ from datetime import datetime
 
 #import high score
 def upload_high_score():
-    with open("high_scores.json","r") as fd:
-        return json.loads(fd)
+    try:
+        with open("high_scores.json","r") as fd:
+            return json.load(fd)
+    except (FileNotFoundError,json.JSONDecodeError):
+        return []
 #save high score
 def save_high_score(high_score):
     with open("high_scores.json","w") as fd:
-        json.dumps(high_score,fd,indent=4)
-def f():
-    return f[1]
+        json.dump(high_score, fd, indent=2) #metto degli spazi
+#def f(high_score):
+#   return high_score[1]
 
 def indovina_numero():
     high_score = upload_high_score()
@@ -39,7 +42,7 @@ def indovina_numero():
                     "name" : name,
                     "trials" : tentativo,
                     "data": datetime.now().strftime("%Y-%m-%d %H:%M:%S")})
-            high_score = sorted(high_score, key=f)
+            high_score = sorted(high_score, key=lambda x: x["trials"])
 
             play_again = input("Do you wanna play again? (yes/no)").strip().lower()
             if play_again == "no":
