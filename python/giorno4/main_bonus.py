@@ -268,6 +268,7 @@ a
 json.dumps(a) #restituisce una stringa
 type(a) #dict
 # dumps = scarica (dump) + stringa (s)
+s= "string"
 json.loads(s) #carico la stringa e ritorna il suo oggetto
 #restituisce {'1': ['a','bbbb','c']}
 #la chiave del dizionario "1" era un numero. in json diventa una stringa
@@ -344,10 +345,11 @@ with open("data.csv") as fd:
 def factorial(n):
     if n > 1 :
         return n*factorial(n)
-    else
+    else:
         return 1
 assert factorial(5) == 120
 
+"""
 #le classi possono rimpiazzare le funzioni ricorsive
 class Factorial:
     def __init__(self,start):
@@ -356,5 +358,5 @@ class Factorial:
     def next(self):
         self.state *= start
         self.n -= 1
-factorial_5 = Factorial(5)
-result(factorial_5)
+    factorial_5 = Factorial(5)
+result(factorial_5) """

@@ -5,15 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4efc28fa-1c9f-4469-bcef-fbb2cead882b" name="Changes" comment="Esercizio_1">
-      <change afterPath="$PROJECT_DIR$/python/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/examples/main" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/examples/martina/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/examples/martina/constants.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/examples/martina/functions.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/examples/martina/main.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/giorno4/indovina_il_numero.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/python/giorno4/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/python/giorno4/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/python/giorno4/main_bonus.py" beforeDir="false" afterPath="$PROJECT_DIR$/python/giorno4/main_bonus.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -62,7 +54,7 @@
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "patch-1",
     "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/marti/PycharmProjects/ai-bootcamp-2025/python/examples/martina",
+    "last_opened_file_path": "C:/Users/marti/PycharmProjects/ai-bootcamp-2025",
     "settings.editor.selected.configurable": "vcs.Git"
   }
 }]]></component>
@@ -78,7 +70,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-python-sdk-495700d161d3-aa17d162503b-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-243.22562.220" />
+        <option value="bundled-python-sdk-a5bc9544c897-aa17d162503b-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-243.23654.177" />
       </set>
     </attachedChunks>
   </component>

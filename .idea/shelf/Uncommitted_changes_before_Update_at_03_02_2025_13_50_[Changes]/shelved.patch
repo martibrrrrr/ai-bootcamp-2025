@@ -1,0 +1,119 @@
+Index: python/giorno4/main.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>class Directory:\r\n    def __init__(self):# Implement qui il codice\r\n        self.contacts= [] #initialize the list that save contact Items in the Directory as empty\r\n\r\n    def __len__(self):\r\n        return len(self.contacts) #calculation of the number of elements  present in the item self.contact\r\n\r\n    def add(self,contact): #aggiungo person o business\r\n        self.contacts.append(contact)\r\n\r\n    def query(self,name):\r\n        result_c = []\r\n        for contact in self.contacts:\r\n            if contact.name == name:\r\n                result_c.append(contact) #contact list. I add the contact to the list\r\n        return result_c #contact list\r\n\r\n    def find(self,search_contact):\r\n        result_c = []\r\n        #i add this in case i'm looking for contacts without number\r\n        for contact in self.contacts:\r\n            if search_contact == \"\":\r\n                #if not contact.phone:\r\n                if contact.phone is None or contact.phone == \"\":\r\n                    result_c.append(contact)  #Returns people with no number \"\"\r\n\r\n            elif isinstance(contact, Person):\r\n                if search_contact in contact.name or (contact.surname and search_contact in contact.surname):\r\n                    result_c.append(contact)  #We return the item `Person`\r\n                elif contact.phone and search_contact in contact.phone:\r\n                    result_c.append(contact)  #If we are looking for a number, we return the entire contact\r\n\r\n            elif isinstance(contact, Business):\r\n                if search_contact in contact.name or (contact.phone and search_contact in contact.phone):\r\n                    result_c.append(contact)  #If it is a company, return the name\r\n        return result_c\r\n\r\nclass Person:\r\n    def __init__(self,name,surname,phone=\"\"):\r\n        self.name=name\r\n        self.surname=surname\r\n        self.phone = phone if phone else None #register as None ( inside phone object ) if i don't have the number phone (contact)\r\n\r\nclass Business:\r\n    def __init__(self, name, phone=\"\"):\r\n        self.name = name\r\n        self.phone = phone if phone else None #None - inside phone object -\r\n\r\nhelp(Directory)\r\nhelp(Business)\r\nhelp(Person)\r\n##ADDITIONAL CONTROLS. PASS THIS TO test.py file\r\n##result = [el.name for el in directory.find(\"\")]\r\n##print(f\"Risultato attuale di find(\\\"\\\"): {result}\") #print for test \"find a empty number phone\"\r\n#assert [el.name for el in directory.find(\"\")] == [\"Linda\"]\r\n#assert [el.phone for el in directory.find(\"Margaret\")] == [\"01-234-567\"]\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/python/giorno4/main.py b/python/giorno4/main.py
+--- a/python/giorno4/main.py	(revision 2b13caf288007ce742ef3392c719a3120ae0775b)
++++ b/python/giorno4/main.py	(date 1738586774608)
+@@ -1,5 +1,5 @@
+ class Directory:
+-    def __init__(self):# Implement qui il codice
++    def __init__(self):
+         self.contacts= [] #initialize the list that save contact Items in the Directory as empty
+ 
+     def __len__(self):
+@@ -17,29 +17,29 @@
+ 
+     def find(self,search_contact):
+         result_c = []
+-        #i add this in case i'm looking for contacts without number
+         for contact in self.contacts:
++            #i add this in case i'm looking for contacts without number
+             if search_contact == "":
+                 #if not contact.phone:
+                 if contact.phone is None or contact.phone == "":
+-                    result_c.append(contact)  #Returns people with no number ""
++                    result_c.append(contact)  #Returns people with no number
+ 
+             elif isinstance(contact, Person):
+                 if search_contact in contact.name or (contact.surname and search_contact in contact.surname):
+-                    result_c.append(contact)  #We return the item `Person`
++                    result_c.append(contact)  #Return the item `Person`
+                 elif contact.phone and search_contact in contact.phone:
+-                    result_c.append(contact)  #If we are looking for a number, we return the entire contact
++                    result_c.append(contact)  #returns the entire contact
+ 
+             elif isinstance(contact, Business):
+                 if search_contact in contact.name or (contact.phone and search_contact in contact.phone):
+-                    result_c.append(contact)  #If it is a company, return the name
++                    result_c.append(contact)  #return the name of the company
+         return result_c
+ 
+ class Person:
+     def __init__(self,name,surname,phone=""):
+         self.name=name
+         self.surname=surname
+-        self.phone = phone if phone else None #register as None ( inside phone object ) if i don't have the number phone (contact)
++        self.phone = phone if phone else None #register as None (inside phone object ) if i don't have the phone number (contact)
+ 
+ class Business:
+     def __init__(self, name, phone=""):
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"4efc28fa-1c9f-4469-bcef-fbb2cead882b\" name=\"Changes\" comment=\"Esercizio_1\">\r\n      <change afterPath=\"$PROJECT_DIR$/python/__init__.py\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/python/examples/main\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/python/examples/martina/__init__.py\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/python/examples/martina/constants.py\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/python/examples/martina/functions.py\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/python/examples/martina/main.py\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/python/giorno4/indovina_il_numero.py\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/python/giorno4/main.py\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/python/giorno4/main.py\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/python/giorno4/main_bonus.py\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/python/giorno4/main_bonus.py\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Python Script\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"GitHubPullRequestSearchHistory\">{\r\n  &quot;lastFilter&quot;: {\r\n    &quot;state&quot;: &quot;OPEN&quot;,\r\n    &quot;assignee&quot;: &quot;martibrrrrr&quot;\r\n  }\r\n}</component>\r\n  <component name=\"GithubPullRequestsUISettings\">{\r\n  &quot;selectedUrlAndAccountId&quot;: {\r\n    &quot;url&quot;: &quot;git@github.com:martibrrrrr/ai-bootcamp-2025.git&quot;,\r\n    &quot;accountId&quot;: &quot;36144cc5-9cf3-4beb-96b8-88779d14337f&quot;\r\n  }\r\n}</component>\r\n  <component name=\"ProjectColorInfo\">{\r\n  &quot;associatedIndex&quot;: 4\r\n}</component>\r\n  <component name=\"ProjectId\" id=\"2rzAwCweR3StzOKFQNE6ukab1Qa\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\"><![CDATA[{\r\n  \"keyToString\": {\r\n    \"Python.esercizio1.executor\": \"Run\",\r\n    \"Python.indovina_il_numero.executor\": \"Run\",\r\n    \"Python.main.executor\": \"Run\",\r\n    \"Python.main_bonus.executor\": \"Run\",\r\n    \"Python.tests.executor\": \"Run\",\r\n    \"RunOnceActivity.ShowReadmeOnStart\": \"true\",\r\n    \"RunOnceActivity.git.unshallow\": \"true\",\r\n    \"git-widget-placeholder\": \"patch-1\",\r\n    \"ignore.virus.scanning.warn.message\": \"true\",\r\n    \"last_opened_file_path\": \"C:/Users/marti/PycharmProjects/ai-bootcamp-2025/python/examples/martina\",\r\n    \"settings.editor.selected.configurable\": \"vcs.Git\"\r\n  }\r\n}]]></component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"CopyFile.RECENT_KEYS\">\r\n      <recent name=\"C:\\Users\\marti\\PycharmProjects\\ai-bootcamp-2025\\python\\examples\\martina\" />\r\n      <recent name=\"C:\\Users\\marti\\OneDrive - Politecnico di Torino\\Desktop\\CORSO IA_EDGEMONI\\esercitazioni\" />\r\n    </key>\r\n    <key name=\"MoveFile.RECENT_KEYS\">\r\n      <recent name=\"C:\\Users\\marti\\PycharmProjects\\ai-bootcamp-2025\\python\\examples\\martina\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"SharedIndexes\">\r\n    <attachedChunks>\r\n      <set>\r\n        <option value=\"bundled-python-sdk-495700d161d3-aa17d162503b-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-243.22562.220\" />\r\n      </set>\r\n    </attachedChunks>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"4efc28fa-1c9f-4469-bcef-fbb2cead882b\" name=\"Changes\" comment=\"\" />\r\n      <created>1737551765790</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1737551765790</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"Esercizio1\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1737711121689</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1737711121689</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"Esercizio_1\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1737723696924</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1737723696924</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"3\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State>\r\n              <option name=\"FILTERS\">\r\n                <map>\r\n                  <entry key=\"branch\">\r\n                    <value>\r\n                      <list>\r\n                        <option value=\"main\" />\r\n                      </list>\r\n                    </value>\r\n                  </entry>\r\n                </map>\r\n              </option>\r\n            </State>\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"Esercizio1\" />\r\n    <MESSAGE value=\"Esercizio_1\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"Esercizio_1\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 2b13caf288007ce742ef3392c719a3120ae0775b)
++++ b/.idea/workspace.xml	(date 1738586785547)
+@@ -4,18 +4,7 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="4efc28fa-1c9f-4469-bcef-fbb2cead882b" name="Changes" comment="Esercizio_1">
+-      <change afterPath="$PROJECT_DIR$/python/__init__.py" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/python/examples/main" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/python/examples/martina/__init__.py" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/python/examples/martina/constants.py" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/python/examples/martina/functions.py" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/python/examples/martina/main.py" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/python/giorno4/indovina_il_numero.py" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/python/giorno4/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/python/giorno4/main.py" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/python/giorno4/main_bonus.py" beforeDir="false" afterPath="$PROJECT_DIR$/python/giorno4/main_bonus.py" afterDir="false" />
+-    </list>
++    <list default="true" id="4efc28fa-1c9f-4469-bcef-fbb2cead882b" name="Changes" comment="Esercizio_1" />
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+@@ -51,21 +40,21 @@
+     <option name="hideEmptyMiddlePackages" value="true" />
+     <option name="showLibraryContents" value="true" />
+   </component>
+-  <component name="PropertiesComponent"><![CDATA[{
+-  "keyToString": {
+-    "Python.esercizio1.executor": "Run",
+-    "Python.indovina_il_numero.executor": "Run",
+-    "Python.main.executor": "Run",
+-    "Python.main_bonus.executor": "Run",
+-    "Python.tests.executor": "Run",
+-    "RunOnceActivity.ShowReadmeOnStart": "true",
+-    "RunOnceActivity.git.unshallow": "true",
+-    "git-widget-placeholder": "patch-1",
+-    "ignore.virus.scanning.warn.message": "true",
+-    "last_opened_file_path": "C:/Users/marti/PycharmProjects/ai-bootcamp-2025/python/examples/martina",
+-    "settings.editor.selected.configurable": "vcs.Git"
++  <component name="PropertiesComponent">{
++  &quot;keyToString&quot;: {
++    &quot;Python.esercizio1.executor&quot;: &quot;Run&quot;,
++    &quot;Python.indovina_il_numero.executor&quot;: &quot;Run&quot;,
++    &quot;Python.main.executor&quot;: &quot;Run&quot;,
++    &quot;Python.main_bonus.executor&quot;: &quot;Run&quot;,
++    &quot;Python.tests.executor&quot;: &quot;Run&quot;,
++    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
++    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
++    &quot;git-widget-placeholder&quot;: &quot;patch-1&quot;,
++    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
++    &quot;last_opened_file_path&quot;: &quot;C:/Users/marti/PycharmProjects/ai-bootcamp-2025/python/examples/martina&quot;,
++    &quot;settings.editor.selected.configurable&quot;: &quot;vcs.Git&quot;
+   }
+-}]]></component>
++}</component>
+   <component name="RecentsManager">
+     <key name="CopyFile.RECENT_KEYS">
+       <recent name="C:\Users\marti\PycharmProjects\ai-bootcamp-2025\python\examples\martina" />
