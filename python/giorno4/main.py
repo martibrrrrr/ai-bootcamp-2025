@@ -54,33 +54,3 @@ help(Person)
 ##print(f"Risultato attuale di find(\"\"): {result}") #print for test "find a empty number phone"
 #assert [el.name for el in directory.find("")] == ["Linda"]
 #assert [el.phone for el in directory.find("Margaret")] == ["01-234-567"]
-
-
-class Person:
-    def __init__(self, name, surname):
-        self.name = name
-        self.surname = surname
-
-    def __iter__(self):
-        return iter([self.name, self.surname])
-
-
-rigel = Person("Rigel", "Di Scala")
-list(rigel)
-['Rigel', 'Di Scala']
-" ".join(rigel)
-'Rigel Di Scala'
-#if name.lower()=="rigel":
-#    print(name)
-
-nome = "rigel di scala"
-"rigel di scala".capitalize()
-#converto la stringa in una sequenza di sottostringhe:
-#split in base allo spazio
-#per ogni parola
-def convert(s):
-    words = s.split()
-    words = [words.capitalize() for word in words]
-    return " ".join(words)
-convert(nome)
-name.startswith("Rigel")
