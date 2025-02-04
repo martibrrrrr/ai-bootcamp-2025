@@ -1,7 +1,9 @@
+print("Welcome to the calculator. \nAdd your operation as shown: \na + b \na - b \na * b \na / b \nWrite 'quit' to close the calculator")
 while True:
+
     text = input(">>> ").strip()
     if text.lower() == "quit":
-        print("arrivederci")
+        print("Bye Bye!")
         break
     try:
         a, b, c = text.split()
@@ -17,14 +19,9 @@ while True:
             print(result)
         elif b == ":" or b == "/":
             if c == 0:
-                raise ZeroDivisionError("Divisione per zero")
-            result = a / c
-            print(result)
-        else:
-            print("Ti piacerebbbbbbbbbe")
+                print("Impossible: Division for zero!") #raise ZeroDivisionError("Division for zero")
+            else:
+                result = a / c
+                print(result)
     except ValueError as e:
-        print(f"{type(e)}")
-    except ZeroDivisionError as e:
-        print(f"{type(e)}")
-    except Exception as e:
-        print(f"{type(e)} ---- OperZIONI NON SUPPORTATE")
+        print(f"Be sure to put a space between the operators. Write 'quit' to close the program ")
