@@ -1,0 +1,13 @@
+[
+  {
+    "data_type": "person",
+    "name": "francesca",
+    "surname": "bonfiglio",
+    "phone": "1234567890"
+  },
+  {
+    "data_type": "business",
+    "name": "conad",
+    "phone": "98765432"
+  }
+]
