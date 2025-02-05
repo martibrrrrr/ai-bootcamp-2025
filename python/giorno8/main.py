@@ -36,7 +36,7 @@ conn.commit()
 
 #studenti nati nel 2000
 print("Student borned in 2000:")
-cur.execute("SELECT first_name, last_name FROM student WHERE year_of_birth >= 2000")
+cur.execute("SELECT first_name, last_name FROM student WHERE year_of_birth = 2000")
 for line in cur.fetchall():
     print(line)
 
