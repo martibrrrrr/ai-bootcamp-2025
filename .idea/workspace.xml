@@ -5,10 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4efc28fa-1c9f-4469-bcef-fbb2cead882b" name="Changes" comment="Esercizio_1">
+      <change afterPath="$PROJECT_DIR$/python/giorno7/esercitazione_sql/es_sql_erica.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/python/giorno7/ex2/lesson_8.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/python/giorno7/ex0/data2_bonus.csv" beforeDir="false" afterPath="$PROJECT_DIR$/python/giorno7/ex0/data2_bonus.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/python/giorno7/ex0/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/python/giorno7/ex0/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/python/giorno7/ex0/main_bonus.py" beforeDir="false" afterPath="$PROJECT_DIR$/python/giorno7/ex0/main_bonus.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/giorno8/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/python/giorno8/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/giorno8/students.csv" beforeDir="false" afterPath="$PROJECT_DIR$/python/giorno8/students.csv" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,22 +46,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Python.calculator.executor&quot;: &quot;Run&quot;,
-    &quot;Python.esercizio1.executor&quot;: &quot;Run&quot;,
-    &quot;Python.indovina_il_numero.executor&quot;: &quot;Run&quot;,
-    &quot;Python.main.executor&quot;: &quot;Run&quot;,
-    &quot;Python.main_bonus.executor&quot;: &quot;Run&quot;,
-    &quot;Python.tests.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;patch-1&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/marti/PycharmProjects/ai-bootcamp-2025&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;vcs.Git&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Python.calculator.executor": "Run",
+    "Python.esercizio1.executor": "Run",
+    "Python.indovina_il_numero.executor": "Run",
+    "Python.main.executor": "Run",
+    "Python.main_bonus.executor": "Run",
+    "Python.tests.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "patch-1",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Users/marti/PycharmProjects/ai-bootcamp-2025",
+    "settings.editor.selected.configurable": "debugger.dataViews"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\marti\PycharmProjects\ai-bootcamp-2025\python\examples\martina" />
