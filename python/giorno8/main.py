@@ -59,3 +59,38 @@ for line in cur.fetchall():
     print(line)
 
 #BONUS
+from datetime import datetime, timedelta
+
+students_assignments = {
+    1: 5,  # Studente 1 ha 5 compiti
+    2: 3,  # Studente 2 ha 3 compiti
+    3: 6,  # Studente 3 ha 6 compiti
+    4: 4,  # Studente 4 ha 4 compiti
+    8: 5,  # Studente 8 ha 5 compiti
+    9: 4,  # Studente 9 ha 4 compiti
+    10: 4,  # Studente 10 ha 4 compiti
+    11: 5,  # Studente 11 ha 5 compiti
+    12: 5  # Studente 12 ha 5 compiti
+}
+start_date = datetime(2025, 1, 1)
+
+conn2 = sqlite3.connect("my_database2.db") #connettore
+cur2 = conn2.cursor() #cursore
+
+#creo la tabella
+cur2.execute('''
+            CREATE TABLE IF NOT EXISTS assignments(
+            id INTEGER PRIMARY KEY
+            data_consegna TEXT)
+''')
+
+conn2.commit()
+
+cur2.executemany("INSERT INTO assignments (id, data_consegna) VALUES (?, ?)", saved_data)
+conn2.commit()
+
+
+
+
+
+
