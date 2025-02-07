@@ -1,4 +1,5 @@
 import csv
+import random
 import sqlite3
 
 #creo SQLite file
@@ -58,8 +59,25 @@ cur.execute("SELECT first_name, last_name, assignments FROM student ORDER BY ass
 for line in cur.fetchall():
     print(line)
 
-#BONUS
+
+"""
+#BONUS----------------------BONUS----------------BONUS------------------------------
 from datetime import datetime, timedelta
+students_without_assignments = []
+assignment_data = []
+
+conn2 = sqlite3.connect("my_database2.db") #connettore
+cur2 = conn2.cursor() #cursore
+
+#creo la tabella
+cur2.execute('''
+            CREATE TABLE IF NOT EXISTS assignments(
+            id INTEGER PRIMARY KEY,
+            student_id INTEGER,
+            delivery_date TEXT)
+''')
+conn2.commit()
+#assegno i compiti come nel file databade1
 
 students_assignments = {
     1: 5,  # Studente 1 ha 5 compiti
@@ -73,24 +91,36 @@ students_assignments = {
     12: 5  # Studente 12 ha 5 compiti
 }
 start_date = datetime(2025, 1, 1)
+expanded_data=[]
+output_file=[]
 
-conn2 = sqlite3.connect("my_database2.db") #connettore
-cur2 = conn2.cursor() #cursore
+for student_id, num_assignments in students_assignments.items():
+    for i in range(num_assignments):
+        new_date= start_date + timedelta(days=random.randint(-2,2))
+        expanded_data.append((student_id,new_date.strftime("%Y-%m-%d"))) #prende un solo argomento quindi passo una tupla
 
-#creo la tabella
+
+cur2.executemany("INSERT INTO assignments (student_id, delivery_date) VALUES (?, ?)", expanded_data) #lascio genereare nuovo id da solo
+conn2.commit()
+#scrivo students_without_assignments.csv
+with open("students_without_assignments.csv","w",newline="", fd):
+writer = csv.writer(fd,delimiter=";")
+    writer.writerow(new_header)
+    writer.writerow(students_without_assignments)
+
+#scrivo soglio gli assignments.csv
+with open("assignments.csv","w",newline="") as fd:
+    writer = csv.writer(fd, delimiter=";")
+    writer.writerow(["id","student_id","delivery_date"]) #intestazione
+    for line, (student_id, delivery_date) in enumerate(expanded_data, start=1 ):
+        writer.writerow([line,student_id, delivery_date])
+
 cur2.execute('''
-            CREATE TABLE IF NOT EXISTS assignments(
-            id INTEGER PRIMARY KEY
-            data_consegna TEXT)
+    SELECT student.first_name, student.last_name, assignments.delivery_date
+    FROM student
+    JOIN assignments ON student.id = assignments.student_id
+    ORDER BY assignments.delivery_date ASC
 ''')
-
-conn2.commit()
-
-cur2.executemany("INSERT INTO assignments (id, data_consegna) VALUES (?, ?)", saved_data)
-conn2.commit()
-
-
-
-
-
-
+for line in cur2.fetchall():
+    print(line)
+"""
